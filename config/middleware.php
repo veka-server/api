@@ -5,6 +5,7 @@
 
 use VekaServer\Config\Config;
 use VekaServer\Container\Container;
+use VekaServer\Swagger\Swagger;
 
 /**
  * Creation de la request (ServerRequestFactory) a partir de Nyholm
@@ -26,6 +27,11 @@ if($config->get('ENV') == 'DEV') {
 
 /** Discord PSR-15 */
 $tableau_middleware[] = Container::getInstance()->get('Log');
+
+/** Swagger */
+$tableau_middleware[] = new Swagger(
+    Config::getInstance()->get('ROOT_DIR').'/src/controller/'
+);
 
 /** add JWT */
 $tableau_middleware[] = Container::getInstance()->get('JWT');

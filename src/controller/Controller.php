@@ -6,7 +6,11 @@ use App\interface\ApiFormatInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Psr\Http\Server\RequestHandlerInterface;
 use VekaServer\Container\Container;
+use OpenApi\Annotations as OA;
 
+/**
+ * @OA\Info(title="My First API", version="0.1")
+ */
 class Controller extends \VekaServer\Framework\Controller
 {
 

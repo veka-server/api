@@ -4,10 +4,16 @@ namespace App\controller;
 use App\model\Utilisateur;
 use VekaServer\Container\Container;
 use VekaServer\JWT\JWT;
+use OpenApi\Annotations as OA;
 
 class Login extends Controller
 {
-
+    /**
+     * @OA\Get(
+     *     path="/signup",
+     *     @OA\Response(response="200", description="demande de token")
+     * )
+     */
     public function signup(){
 
         /** verifier que l'utilisateur */
@@ -37,17 +43,6 @@ class Login extends Controller
         $this->responseApi->setHTTPCode(200);
         $this->responseApi->setData($retour);
         return $this->send();
-    }
-
-    public function test(){
-
-        /** @todo verifier si l'utilisateur est toujours valide (droit/bans/...) */
-
-       $users = Utilisateur::getAll();
-
-       $this->responseApi->setHTTPCode(200);
-       $this->responseApi->setData($users);
-       return $this->send();
     }
 
 }

@@ -5,7 +5,12 @@ use Psr\Http\Message\ResponseInterface;
 
 class Utilisateur extends Controller
 {
-
+    /**
+     * @OA\Get(
+     *     path="/utilisateurs/[id]",
+     *     @OA\Response(response="200", description="...")
+     * )
+     */
     public function getByID($id) :ResponseInterface
     {
 
@@ -17,6 +22,12 @@ class Utilisateur extends Controller
        return $this->send();
     }
 
+    /**
+     * @OA\Get(
+     *     path="/utilisateurs",
+     *     @OA\Response(response="200", description="...")
+     * )
+     */
     public function getAll() :ResponseInterface
     {
 
@@ -28,6 +39,12 @@ class Utilisateur extends Controller
        return $this->send();
     }
 
+    /**
+     * @OA\Post(
+     *     path="/utilisateurs/[id]",
+     *     @OA\Response(response="201", description="creer un utilisateur")
+     * )
+     */
     public function add() :ResponseInterface
     {
 
@@ -37,6 +54,12 @@ class Utilisateur extends Controller
         return $this->send();
     }
 
+    /**
+     * @OA\Delete(
+     *     path="/utilisateurs/[id]",
+     *     @OA\Response(response="204", description="")
+     * )
+     */
     public function deleteByID($id) :ResponseInterface
     {
 
@@ -46,6 +69,13 @@ class Utilisateur extends Controller
         return $this->send();
     }
 
+
+    /**
+     * @OA\Patch(
+     *     path="/utilisateurs/[id]",
+     *     @OA\Response(response="204", description="")
+     * )
+     */
     public function updateByID($id) :ResponseInterface
     {
 
@@ -57,6 +87,12 @@ class Utilisateur extends Controller
         return $this->send();
     }
 
+    /**
+     * @OA\Put(
+     *     path="/utilisateurs/[id]",
+     *     @OA\Response(response="204", description="")
+     * )
+     */
     public function updateAllColumnByID($id)
     {
         /** @todo verifier si l'utilisateur est toujours valide (droit/bans/...) */

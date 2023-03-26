@@ -25,6 +25,9 @@
         "veka-server/discord": "^0.2",
         "nyholm/psr7-server": "^1.0",
         "veka-server/jwt": "^0.0",
-        "veka-server/bdd_sqlite": "^0.0"
+        "veka-server/bdd_sqlite": "^0.0",
+        "swagger-api/swagger-ui": "^4.18",
+        "veka-server/swagger": "^0.0",
+        "zircote/swagger-php": "^4.7"
     }
 }
